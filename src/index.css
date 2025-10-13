@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------- Base: 전역 최소 설정 -------- */
+@layer base {
+  /* 스무스 스크롤 & 앵커 점프 시 헤더 높이 보정 */
+  html { scroll-behavior: smooth; }
+  section { scroll-margin-top: 96px; }
+
+  /* 전체 높이 확보(필요시) */
+  html, body, #root { height: 100%; }
+
+  /* 기본 바탕/텍스트 & 매끄러운 렌더링 */
+  body { @apply bg-white text-slate-900 antialiased; }
+
+  /* 링크 컬러 */
+  a { @apply text-indigo-600 hover:text-indigo-500; }
+}
+
+/* -------- Components: 공통 컴포넌트 유틸 -------- */
+@layer components {
+  /* 기본 버튼 (네가 쓰던 것 유지) */
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium
+           bg-gray-900 text-white hover:bg-gray-800
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900;
+  }
+
+  /* 강조 버튼 (네가 쓰던 것 유지) */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium
+           bg-indigo-600 text-white hover:bg-indigo-500
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+  }
+
+  /* 외곽선 버튼 (추가) */
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium
+           border border-gray-300 hover:bg-gray-100;
+  }
+
+  /* 뱃지 (네가 쓰던 것 유지) */
+  .badge {
+    @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium
+           bg-emerald-100 text-emerald-700;
+  }
+}
+
+/* -------- Utilities: 프로젝트 전용 보조 유틸 -------- */
+@layer utilities {
+  /* 공통 컨테이너(1152px 기준, tailwind.config.js의 max-w-container 사용) */
+  .container-x { @apply mx-auto max-w-container px-4; }
+
+  /* 섹션 세로 여백 */
+  .section-y { @apply py-16 md:py-20; }
+}
