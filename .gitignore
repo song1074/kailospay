@@ -22,3 +22,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# secrets & env
+.env
+*.env
+.env.development
+.env.production
+server/.env
+# certificates
+certs/
+# uploads (large/private)
+server/uploads/
+# temp
+=4
