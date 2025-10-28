@@ -1,37 +1,15 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
+node_modules/
+dist/
+# environment
+.env
+.env.*
 *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# secrets & env
-.env
-*.env
-.env.development
-.env.production
-server/.env
-# certificates
-certs/
-# uploads (large/private)
+# runtime outputs / secrets
+server/certs/
 server/uploads/
-# temp
-=4
+server/downloaded.pdf
+public/qr-assets/
+
+# (주의) 소스는 절대 무시하지 않음
+# public/**, src/**, server/src/** 는 반드시 추적
