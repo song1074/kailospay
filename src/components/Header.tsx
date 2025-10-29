@@ -1,6 +1,8 @@
-// src/components/Header.tsx
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
+
+// 파일 위치: src/assets/kailospay/logo-blue.png
+import logoBlue from "../assets/kailospay/logo-blue.png";
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -14,10 +16,18 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b">
       <div className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="font-bold text-lg text-indigo-600">
-          KailosPay
+        {/* 브랜드 */}
+        <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="KailosPay 홈">
+          <img
+            src={logoBlue}
+            alt="KailosPay"
+            className="h-8 sm:h-9 md:h-10 w-auto select-none pointer-events-none"
+            draggable={false}
+          />
+          <span className="sr-only">KailosPay</span>
         </Link>
 
+        {/* 네비게이션 */}
         <nav className="flex items-center gap-4 text-sm">
           <Link to="/contracts/new" className="hover:underline">
             계약 등록
